@@ -1,0 +1,12 @@
+{
+  "name": "blessing",
+  "description": "blessing friends",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "adminlte": "2.3.3",
+    "ionicons": "2.0.1",
+    "jquery": "2.2.3"
+  }
+}
+
