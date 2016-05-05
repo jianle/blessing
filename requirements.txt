@@ -1,3 +1,6 @@
-Flask
-flask-mongoengine
-Flask-Script
+Flask==0.10.1
+Flask-Script==2.0.5
+Flask-Login==0.2.11
+Flask-SQLAlchemy==1.0
+MySQL-python==1.2.5
+SQLAlchemy==0.9.4
