@@ -14,7 +14,7 @@ node_modules
 .buildpath
 .settings
 */bin
-*/*.DS_Store
+*.DS_Store
 .idea
 .idea/vcs.xml
 
