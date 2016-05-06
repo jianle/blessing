@@ -2,6 +2,7 @@
 
 from flask.ext.script import Manager, Server
 from app import app
+import web
 
 manager = Manager(app)
 
