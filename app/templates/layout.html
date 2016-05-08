@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="http://gravatar.com/avatar/7bfc1a7a185a7c775fade304fb857ad2?s=90&d=identicon" class="img-circle" alt="User Image">
+                            <img src="http://gravatar.com/avatar/{{ current_user.md5_email }}?s=90&d=identicon" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -169,17 +169,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="http://gravatar.com/avatar/7bfc1a7a185a7c775fade304fb857ad2?s=90&d=identicon" class="user-image" alt="User Image">
+                  <img src="http://gravatar.com/avatar/{{ current_user.md5_email() }}?s=90&d=identicon" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs">{{ current_user.truename }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="http://gravatar.com/avatar/7bfc1a7a185a7c775fade304fb857ad2?s=90&d=identicon" class="img-circle" alt="User Image">
+                    <img src="http://gravatar.com/avatar/{{ current_user.md5_email() }}?s=90&d=identicon" class="img-circle" alt="User Image">
                     <p>
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      {{ current_user.truename }}
+                      <small>{{ current_user.created }}</small>
                     </p>
                   </li>
                   <!-- Menu Body -->
@@ -200,7 +200,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="{{ url_for('user.logout') }}" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
@@ -222,10 +222,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="http://gravatar.com/avatar/7bfc1a7a185a7c775fade304fb857ad2?s=90&d=identicon" class="img-circle" alt="User Image">
+              <img src="http://gravatar.com/avatar/{{ current_user.md5_email() }}?s=90&d=identicon" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>{{ current_user.truename }}</p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -287,7 +287,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          Anything you want
+
         </div>
         <!-- Default to the left -->
         <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.

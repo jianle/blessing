@@ -3,6 +3,7 @@ from sqlalchemy.types import Integer, String, Text, TIMESTAMP,VARCHAR
 from sqlalchemy.dialects.mysql import TINYINT
 from app import app, db
 from flask_login import UserMixin
+import hashlib
 
 class User(db.Model, UserMixin):
   __tablename__ = 'user'
@@ -36,3 +37,7 @@ class User(db.Model, UserMixin):
   def __repr__(self):
     return '<User %r>' % (self.email)
 
+  def md5_email(self):
+    m = hashlib.md5()
+    m.update(self.email)
+    return m.hexdigest()

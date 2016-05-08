@@ -11,7 +11,6 @@ user = Blueprint('user', __name__)
 @user.route('/login', methods = ['GET', 'POST'])
 def login():
   import hashlib
-
   if request.method == 'GET':
      return render_template("login.html")
 
@@ -28,11 +27,13 @@ def login():
 
   userinfo = User.query.filter(and_(User.email == email, User.password == m.hexdigest())).first()
   if userinfo is None:
-    msg = '用户名密码不对'
-    return render_template("login.html", email = email, password = password)
+    msg = '用户名密码不正确'
+    password = ''
+    return render_template("login.html", email = email, password = password, msg = msg)
   else:
     """do nothing"""
 
+  print 'login successful'
   response = make_response(redirect('/'))
   secure_token = create_token(userinfo.id, userinfo.email, request.user_agent)
 

@@ -15,13 +15,10 @@ from app.views.user import match_user_cookie
 
 @login_manager.user_loader
 def load_user(id):
-  print 'load user' + str(id)
   return User.query.filter(User.id == id).first()
 
 @app.before_request
 def before_request():
-  g.user = current_user
-  print 'before request'
   method = request.method.lower()
   path = request.path
 

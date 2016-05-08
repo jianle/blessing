@@ -6,3 +6,6 @@ app.config.from_object('config')
 
 db=SQLAlchemy(app)
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
