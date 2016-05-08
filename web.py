@@ -8,7 +8,7 @@ COOKIE_KEY_SECURE_TOKEN = 'secure_token'
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.session_protection = 'strong'
-login_manager.login_view = 'app.views.user.login'
+login_manager.login_view = "user.login"
 
 from app.models.user import User
 from app.views.user import match_user_cookie
@@ -46,7 +46,6 @@ def after_request(response):
 @login_manager.request_loader
 def load_user_from_request(request):
   secure = request.cookies.get(COOKIE_KEY_SECURE_TOKEN)
-  print 'request_loader '+ str(secure)
   if secure:
     id = match_user_cookie(secure, request.user_agent)
     if id:
@@ -57,7 +56,6 @@ def load_user_from_request(request):
 @login_manager.unauthorized_handler
 def unauthorized():
   secure = request.cookies.get(COOKIE_KEY_SECURE_TOKEN)
-  print 'xxxxx........' + str(secure)
   if secure:
     id = match_user_cookie(secure, request.user_agent)
     if id:

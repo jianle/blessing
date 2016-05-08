@@ -12,11 +12,6 @@ user = Blueprint('user', __name__)
 def login():
   import hashlib
 
-  print g.user
-
-  if g.user is not None and g.user.is_authenticated():
-    return redirect(url_for('/'))
-
   if request.method == 'GET':
      return render_template("login.html")
 

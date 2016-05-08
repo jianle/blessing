@@ -6,5 +6,3 @@ app.config.from_object('config')
 
 db=SQLAlchemy(app)
 
-from .main import main
-from .main.user import user
