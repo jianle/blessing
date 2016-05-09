@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from app import app, db
+from app import app, db, logger
 from flask import render_template, Blueprint, redirect, json, request, make_response, url_for, g
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models.user import User
@@ -23,6 +23,7 @@ def login():
   userinfo = User.query.filter(User.email == email).first()
   if userinfo is None:
     msg = '用户不存在, 请先注册'
+    logger.info(msg)
     return render_template("login.html", email = email, msg = msg)
 
   userinfo = User.query.filter(and_(User.email == email, User.password == m.hexdigest())).first()

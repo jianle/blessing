@@ -5,6 +5,6 @@ SECRET_KEY = 'BLESSING_SECRET_KEY'
 CSRF_ENABLED = True
 IGNOREPATH = '/static/*'
 
-LOGGING_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+LOGGING_FORMAT =  '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
 LOGGING_LOCATION = 'blessing.log'
 LOGGING_LEVEL = logging.DEBUG
