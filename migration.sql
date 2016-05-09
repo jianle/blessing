@@ -11,6 +11,11 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `euk` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+;
 
-insert into user values(1, 'xx', 'xx', 'pwd', 'email', -1, current_timestamp())
+insert into user values(1, 'admin', '管理员', md5('1234'), 'admin@email.com', -1, current_timestamp());
+
+
+
+
 
