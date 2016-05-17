@@ -75,7 +75,8 @@ from app.views import *
 
 MODULES = (
   (public, ''),
-  (user, '/user')
+  (user, '/user'),
+  (birthday, '/birthday')
 )
 
 
