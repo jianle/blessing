@@ -21,7 +21,41 @@
       <div class="col-md-12">
         <div class="box">
           <div class="box-header">
-            <h3>My Friends</h3>
+            <form>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Sex</label>
+                    <select aria-hidden="true" tabindex="-1" class="form-control select2 select2-hidden-accessible" style="width: 100%;">
+                      <option selected="selected" value="-1">all</option>
+                      <option value="1">male</option>
+                      <option value="2">female</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Status</label>
+                    <select aria-hidden="true" tabindex="-1" class="form-control select2 select2-hidden-accessible" style="width: 100%;">
+                      <option selected="selected" value="-1">all</option>
+                      <option value="1">valid</option>
+                      <option value="2">invalid</option>
+                    </select>
+                  </div>
+                </div>
+                 <div class="col-md-6">
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <div class="input-group">
+                    <input class="form-control" placeholder="place enter user name" type="text">
+                    <span class="input-group-btn">
+                      <button class="btn btn-info btn-flat" type="button">Go!</button>
+                    </span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
           <div class="box-body no-padding">
             <table class="table table-striped">
@@ -32,17 +66,29 @@
                  <th>Sex</th>
                  <th>Birthday</th>
                  <th>Phone</th>
-                 <th>email</th>
+                 <th>Email</th>
                  <th>Status</th>
+                  <th>Operate</th>
                 </tr>
                 <tr>
                   <td>1.</td>
                   <td>saboloh</td>
-                  <td><i class="ion-male"></i> male</td>
+                  <td><i class="ion-male text-green"></i> male</td>
                   <td>0101</td>
                   <td>18600001111</td>
                   <td>leyu1992@126.com</td>
                   <td>有效</td>
+                  <td>修改/删除</td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>cara</td>
+                  <td><i class="ion-female text-red"></i> female</td>
+                  <td>0101</td>
+                  <td>18600001111</td>
+                  <td>leyu1992@126.com</td>
+                  <td>有效</td>
+                  <td>修改/删除</td>
                 </tr>
               </tbody>
             </table>

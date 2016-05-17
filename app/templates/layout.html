@@ -91,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="http://gravatar.com/avatar/{{ current_user.md5_email }}?s=90&d=identicon" class="img-circle" alt="User Image">
+                            <img src="http://gravatar.com/avatar/{{ current_user.md5_email() }}?s=90&d=identicon" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -247,7 +247,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+            <li class="active"><a href="{{ url_for('birthday.list') }}"><i class="fa fa-gift"></i> <span>Birthday</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
