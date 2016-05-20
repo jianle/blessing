@@ -18,7 +18,10 @@ node_modules
 .idea
 .idea/vcs.xml
 
+rev-*
+
 *.pyc
 */*.pyc
+app/static/css/dist/*
 app/static/js/*
 !/app/static/js/app
